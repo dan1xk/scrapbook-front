@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Recados</title>
+        <title>Cadastro</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./css/styles.css">
     </head>
     <body>
-        <p>hello world</p>
-        <script src="./js/scripts.js"></script>
+        <div class="container">
+            <div class="background">
+                <img src="./images/background.jpg" alt="Background">
+            </div>
+            <div class="register">
+                <div id="mensagem"></div>
+                <div class="title-register">
+                    <h1>ScrapBook Cadastro</h1>
+                </div>
+                <div class="input">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+                <div class="input">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha">
+                </div>
+                <div class="input">
+                    <label for="confirmar-senha">Confirmar senha</label>
+                    <input type="password" name="confirmar-senha" id="confirmar-senha">
+                </div>
+                <div class="button">
+                    <button onclick="addUsuario()">CADASTRAR</button>
+                </div>
+                <div class="login">
+                    <p>Já possui conta?</p>
+                    <a href="#">Entrar</a>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./js/registrar.js"></script>
     </body>
 </html>
