@@ -2,9 +2,11 @@ const nome = document.getElementById('nome');
 const senha = document.getElementById('senha');
 const mensagem = document.getElementById('mensagem');
 
-function logar() {
+axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
 
-    axios.post('https://apiscrapbook.herokuapp.com/login', {
+function logar(event) {
+    event.preventDefault()
+    axios.post('/login', {
         nome: nome.value,
         senha: senha.value
     })

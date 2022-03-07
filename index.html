@@ -10,7 +10,7 @@
             <div class="background">
                 <img src="./images/background.jpg" alt="Imagem-de-fundo">
             </div>
-            <div class="register">
+            <form class="register">
                 <div id="mensagem"></div>
                 <div class="title-register">
                     <h1>ScrapBook Cadastro</h1>
@@ -28,13 +28,13 @@
                     <input type="password" name="confirmar-senha" id="confirmar-senha">
                 </div>
                 <div class="button">
-                    <button onclick="addUsuario()">CADASTRAR</button>
+                    <input type="submit" value="CADASTRAR" onclick="criarUsuario(event)">
                 </div>
                 <div class="login">
                     <p>Já possui conta?</p>
                     <a href="./logar.html">Entrar</a>
                 </div>
-            </div>
+            </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="./js/registrar.js"></script>

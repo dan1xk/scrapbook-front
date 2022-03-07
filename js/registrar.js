@@ -3,7 +3,10 @@ const senha = document.getElementById('senha');
 const confirmarSenha = document.getElementById('confirmar-senha');
 const mensagem = document.getElementById('mensagem');
 
-function addUsuario() {
+axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
+
+function criarUsuario(event) {
+    event.preventDefault()
     let validate = true
     const usuarioNome = nome.value;
     const usuarioSenha = senha.value;
@@ -21,7 +24,7 @@ function addUsuario() {
     };
 
     if(validate == true) {
-        axios.post("https://apiscrapbook.herokuapp.com/cadastrar", novoUsuario)
+        axios.post('/cadastrar', novoUsuario)
         .then(response => {
             mensagem.style.display = 'block';
             mensagem.style.backgroundColor = '#28ff5e65';
