@@ -21,7 +21,7 @@ function addUsuario() {
     };
 
     if(validate == true) {
-        axios.post("http://localhost:8080/cadastrar", novoUsuario)
+        axios.post("https://apiscrapbook.herokuapp.com/cadastrar", novoUsuario)
         .then(response => {
             mensagem.style.display = 'block';
             mensagem.style.backgroundColor = '#28ff5e65';

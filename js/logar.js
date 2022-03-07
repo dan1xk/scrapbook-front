@@ -4,7 +4,7 @@ const mensagem = document.getElementById('mensagem');
 
 function logar() {
 
-    axios.post('http://localhost:8080/login', {
+    axios.post('https://apiscrapbook.herokuapp.com/login', {
         nome: nome.value,
         senha: senha.value
     })
