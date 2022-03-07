@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Cadastro</title>
+        <title>ScrapBook Login</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./css/styles.css">
     </head>
@@ -13,7 +13,7 @@
             <div class="register">
                 <div id="mensagem"></div>
                 <div class="title-register">
-                    <h1>ScrapBook Cadastro</h1>
+                    <h1>ScrapBook Login</h1>
                 </div>
                 <div class="input">
                     <label for="nome">Nome</label>
@@ -23,20 +23,16 @@
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" id="senha">
                 </div>
-                <div class="input">
-                    <label for="confirmar-senha">Confirmar senha</label>
-                    <input type="password" name="confirmar-senha" id="confirmar-senha">
-                </div>
                 <div class="button">
-                    <button onclick="addUsuario()">CADASTRAR</button>
+                    <button onclick="logar()">LOGAR</button>
                 </div>
                 <div class="login">
-                    <p>Já possui conta?</p>
-                    <a href="./logar.html">Entrar</a>
+                    <p>Não possui conta?</p>
+                    <a href="./index.html">Cadastrar</a>
                 </div>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./js/registrar.js"></script>
+        <script src="./js/logar.js"></script>
     </body>
 </html>
