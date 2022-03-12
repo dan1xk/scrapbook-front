@@ -3,7 +3,7 @@ const senha = document.getElementById('senha');
 const confirmarSenha = document.getElementById('confirmar-senha');
 const mensagem = document.getElementById('mensagem');
 
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
 
 function criarUsuario(event) {
     event.preventDefault()

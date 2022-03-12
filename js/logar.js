@@ -2,7 +2,7 @@ const nome = document.getElementById('nome');
 const senha = document.getElementById('senha');
 const mensagem = document.getElementById('mensagem');
 
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
 
 function criarLocalStorage(nome) {
     localStorage.setItem('usuarioLogado', nome)

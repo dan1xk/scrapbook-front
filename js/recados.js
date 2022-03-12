@@ -1,4 +1,4 @@
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
 const usuarioLogado = localStorage.getItem('usuarioLogado')
 
 function verificarLogin() {
