@@ -2,14 +2,22 @@ const nome = document.getElementById('nome');
 const senha = document.getElementById('senha');
 const mensagem = document.getElementById('mensagem');
 
-axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
+axios.defaults.baseURL = 'http://localhost:8080'
+
+function criarLocalStorage(nome) {
+    localStorage.setItem('usuarioLogado', nome)
+}
 
 function logar(event) {
-    event.preventDefault()
-    axios.post('/login', {
+    criarLocalStorage(nome.value)
+    event.preventDefault();
+
+    const usuario = {
         nome: nome.value,
         senha: senha.value
-    })
+    };
+
+    axios.post('/login', usuario)
     .then(response => {
         mensagem.style.display = 'block';
         mensagem.style.backgroundColor = '#28ff5e65';

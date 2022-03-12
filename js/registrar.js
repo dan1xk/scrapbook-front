@@ -3,17 +3,15 @@ const senha = document.getElementById('senha');
 const confirmarSenha = document.getElementById('confirmar-senha');
 const mensagem = document.getElementById('mensagem');
 
-axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
+axios.defaults.baseURL = 'http://localhost:8080'
 
 function criarUsuario(event) {
     event.preventDefault()
     let validate = true
-    const usuarioNome = nome.value;
-    const usuarioSenha = senha.value;
-
+    
     const novoUsuario = {
-        nome: usuarioNome,
-        senha: usuarioSenha
+        nome: nome.value,
+        senha: senha.value
     };
 
     if(senha.value !== confirmarSenha.value) {
