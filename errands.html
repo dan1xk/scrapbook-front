@@ -9,33 +9,33 @@
     <body>
         <div class="container-fluid">
             <div class="background no-animation">
-                <img src="https://images3.alphacoders.com/954/thumb-1920-954241.jpg" alt="Imagem de fundo">
+                <img src="https://images2.alphacoders.com/100/1003880.png" alt="Imagem de fundo">
             </div>
-            <div class="conteudo">
-                <div class="tabela">
-                    <table class="table table-striped">
+            <div class="content">
+                    <div class="table-container">
+                    <table class="table">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Recado</th>
                             <th scope="col">Ações</th>
                         </tr>
-                        <tbody>
-                            <td>oi</td>
-                            <td>oi2</td>
-                            <td>xd</td>
-                        </tbody>
                         </thead>
+                        <tbody id="table">
+                        </tbody>
                     </table>
                 </div>
-                <div class="add-recado">
-                    <input type="text">
-                    <button type="button" class="btn btn-primary">Adicionar Recado</button>
+                <div class="add-errand">
+                    <div class="user">
+                        <p>Seja bem-vindo <span id="area-usuario"></span></p>
+                        <button class="button button-red"  onclick="logout()">Logout</button>
+                    </div>
+                    <input type="text" id="errand">
+                    <button class="button" id="add-item" onclick="addErrand()">Adicionar Recado</button>
                 </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./js/recados.js"></script>
+        <script src="./js/errands.js"></script>
     </body>
 </html>
