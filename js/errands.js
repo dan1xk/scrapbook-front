@@ -1,17 +1,17 @@
-const errand = document.getElementById('errand')
-const userLogged = localStorage.getItem('userLogged')
+const errand = document.getElementById('errand');
+const userLogged = localStorage.getItem('userLogged');
 const tableBody = document.getElementById("table");
 const user = document.getElementById("user-area");
 
-axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
+axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com';
 
 function logout() {
-    localStorage.setItem('userLogged', '')
-    window.location.href = './login.html'
+    localStorage.setItem('userLogged', '');
+    window.location.href = './login.html';
 }
 
 async function checkLogin() {
-    const userLogged = localStorage.getItem('userLogged')
+    const userLogged = localStorage.getItem('userLogged');
 
     const user = {
         name: userLogged
@@ -44,31 +44,31 @@ async function addErrand() {
         console.log(error);
     })
 
-    showMessages()
+    showMessages();
 }
 
 async function errandDelete(id) {
-    await axios.delete(`/${userLogged}/errand/${id}`)
-    showMessages()
+    await axios.delete(`/${userLogged}/errand/${id}`);
+    showMessages();
 }
 
 async function errandChange(id) {
-    let errand = prompt('Editar o Recado')
+    let errand = prompt('Editar o Recado');
 
     let errandEdited = {
         errand: errand
     }
 
-    await axios.put(`/${userLogged}/errand/${id}`, errandEdited)
-    showMessages()
+    await axios.put(`/${userLogged}/errand/${id}`, errandEdited);
+    showMessages();
 }
 
 async function showMessages() {
     await axios.get('/users')
     .then(response => {
-        user.innerHTML = userLogged
+        user.innerHTML = userLogged;
         tableBody.innerHTML = '';
-        const errands = response.data.find(user => user.name === userLogged).errands
+        const errands = response.data.find(user => user.name === userLogged).errands;
         return errands.map(item => {
             const position = errands.indexOf(item);
             tableBody.innerHTML += `
@@ -85,4 +85,4 @@ async function showMessages() {
     });
 };
 
-showMessages()
+showMessages();

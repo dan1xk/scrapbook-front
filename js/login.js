@@ -2,14 +2,14 @@ const nameUser = document.getElementById('name');
 const password = document.getElementById('password');
 const message = document.getElementById('message');
 
-axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
+axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com';
 
 function userLoggedVerify(name) {
-    localStorage.setItem('userLogged', name)
+    localStorage.setItem('userLogged', name);
 }
 
 function login(event) {
-    userLoggedVerify(nameUser.value)
+    userLoggedVerify(nameUser.value);
     event.preventDefault();
 
     const user = {
