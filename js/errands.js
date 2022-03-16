@@ -3,7 +3,7 @@ const userLogged = localStorage.getItem('userLogged')
 const tableBody = document.getElementById("table");
 const user = document.getElementById("area-usuario");
 
-axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
+axios.defaults.baseURL = 'http://localhost:8080'
 
 function logout() {
     localStorage.setItem('userLogged', '')
@@ -47,26 +47,25 @@ function addErrand() {
     .catch(error => {
         console.log(error);
     })
-    refreshPage()
+
+    showMessages()
 }
 
 function showMessages() {
     axios.get('/users')
     .then(response => {
-    user.innerHTML = userLogged
-    tableBody.innerHTML = ''
-    const errands = response.data.find(user => user.name === userLogged).errands
-    console.log(errands);
-    return errands.map(item => {
-        const position = errands.indexOf(item);
-        tableBody.innerHTML += `
-        <td class="td">${position + 1}</td>
-        <td class="td">${item.errand}</td>
-        <td class="td">
-            <input type='submit' class='button' value='Editar' draggable="false" onclick="errandChange(${item.id})"> 
-            <input type='submit' class='button button-red' value='Excluir' onclick="errandDelete(${item.id})">
-        </td> 
-        `
+        user.innerHTML = userLogged
+        tableBody.innerHTML = ''
+        const errands = response.data.find(user => user.name === userLogged).errands
+        return errands.map(item => {
+            const position = errands.indexOf(item);
+            tableBody.innerHTML += `
+                <td class="td">${position + 1}</td>
+                <td class="td">${item.errand}</td>
+                <td class="td">
+                    <input type='submit' class='button' value='Editar' draggable="false" onclick="errandChange(${item.id})"> 
+                    <input type='submit' class='button button-red' value='Excluir' onclick="errandDelete(${item.id})">
+                </td>`
       });
 
     }).catch(error => {
@@ -76,7 +75,7 @@ function showMessages() {
 
 function errandDelete(id) {
     axios.delete(`/${userLogged}/errand/${id}`)
-    refreshPage()
+    showMessages()
 }
 
 function errandChange(id) {
@@ -87,7 +86,7 @@ function errandChange(id) {
     }
 
     axios.put(`/${userLogged}/errand/${id}`, errandEdited)
-    refreshPage()
+    showMessages()
 }
 
 showMessages()
