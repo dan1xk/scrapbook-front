@@ -18,7 +18,7 @@ function createUser(event) {
         validate = false
         message.style.display = 'block';
         message.style.backgroundColor = '#ff282865';
-        message.innerHTML = 'passwords não conferem';
+        message.innerHTML = 'senhas não conferem';
     };
 
     if(validate == true) {
