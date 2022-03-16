@@ -3,7 +3,7 @@ const userLogged = localStorage.getItem('userLogged')
 const tableBody = document.getElementById("table");
 const user = document.getElementById("area-usuario");
 
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = 'https://apiscrapbook.herokuapp.com'
 
 function logout() {
     localStorage.setItem('userLogged', '')
