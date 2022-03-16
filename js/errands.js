@@ -1,7 +1,7 @@
 const errand = document.getElementById('errand')
 const userLogged = localStorage.getItem('userLogged')
 const tableBody = document.getElementById("table");
-const user = document.getElementById("area-usuario");
+const user = document.getElementById("user-area");
 
 axios.defaults.baseURL = 'http://localhost:8080'
 
@@ -10,18 +10,14 @@ function logout() {
     window.location.href = './login.html'
 }
 
-const refreshPage = () => {
-    window.location.href = './errands.html'
-}
-
-function checkLogin() {
+async function checkLogin() {
     const userLogged = localStorage.getItem('userLogged')
 
     const user = {
         name: userLogged
     }
 
-    axios.post('/errands', user)
+    await axios.post('/errands', user)
     .then(response => {
         response.data
     })
@@ -33,14 +29,14 @@ function checkLogin() {
 
 checkLogin();
 
-function addErrand() {
+async function addErrand() {
     const errand = document.getElementById('errand');
 
     const newErrand = {
         errand: errand.value
     }
 
-    axios.post(`/errand/${userLogged}`, newErrand)
+    await axios.post(`/errand/${userLogged}`, newErrand)
     .then(response => {
         response.data
     })
@@ -51,47 +47,42 @@ function addErrand() {
     showMessages()
 }
 
-function showMessages() {
-    axios.get('/users')
-    .then(response => {
-        user.innerHTML = userLogged
-        tableBody.innerHTML = ''
-        const errands = response.data.find(user => user.name === userLogged).errands
-        return errands.map(item => {
-            const position = errands.indexOf(item);
-            tableBody.innerHTML += `
-                <td class="td">${position + 1}</td>
-                <td class="td">${item.errand}</td>
-                <td class="td">
-                    <input type='submit' class='button' value='Editar' draggable="false" onclick="errandChange(${item.id})"> 
-                    <input type='submit' class='button button-red' value='Excluir' onclick="errandDelete(${item.id})">
-                </td>`
-      });
-
-    }).catch(error => {
-        console.log(error);
-    });
-};
-
-function errandDelete(id) {
-    axios.delete(`/${userLogged}/errand/${id}`)
+async function errandDelete(id) {
+    await axios.delete(`/${userLogged}/errand/${id}`)
     showMessages()
 }
 
-function errandChange(id) {
+async function errandChange(id) {
     let errand = prompt('Editar o Recado')
 
     let errandEdited = {
         errand: errand
     }
 
-    axios.put(`/${userLogged}/errand/${id}`, errandEdited)
+    await axios.put(`/${userLogged}/errand/${id}`, errandEdited)
     showMessages()
 }
 
+async function showMessages() {
+    await axios.get('/users')
+    .then(response => {
+        user.innerHTML = userLogged
+        tableBody.innerHTML = '';
+        const errands = response.data.find(user => user.name === userLogged).errands
+        return errands.map(item => {
+            const position = errands.indexOf(item);
+            tableBody.innerHTML += `
+            <td class="td">${position + 1}</td>
+            <td class="td">${item.errand}</td>
+            <td class="td">
+                <input type='submit' class='button' value='Editar' draggable="false" onclick="errandChange(${item.id})"> 
+                <input type='submit' class='button button-red' value='Excluir' onclick="errandDelete(${item.id})">
+            </td>`
+        });
+    })
+    .catch(error => {
+        console.log(error);
+    });
+};
+
 showMessages()
-
-
-
-
-
