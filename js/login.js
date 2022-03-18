@@ -22,7 +22,7 @@ function login(event) {
         message.style.display = 'block';
         message.style.backgroundColor = '#28ff5e65';
         message.innerHTML = response.data.message;
-        setTimeout(() => (window.location.href = "./errands.html"), 1500);
+        setTimeout(() => (window.location.href = "./errands.html"), 750);
     })
     .catch(error => {
         message.style.display = 'block';
