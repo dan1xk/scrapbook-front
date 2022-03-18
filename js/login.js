@@ -9,8 +9,8 @@ function userLoggedVerify(name) {
 }
 
 function login(event) {
-    userLoggedVerify(nameUser.value);
     event.preventDefault();
+    userLoggedVerify(nameUser.value);
 
     const user = {
         name: nameUser.value,
