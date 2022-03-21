@@ -18,13 +18,13 @@ async function checkLogin() {
     }
 
     await axios.post('/errands', user)
-    .then(response => {
-        response.data
-    })
-    .catch(error => {
-        console.log(error);
-        window.location.href = '../login.html'
-    })
+        .then(response => {
+            response.data
+        })
+        .catch(error => {
+            console.log(error);
+            window.location.href = '../login.html'
+        })
 }
 
 checkLogin();
@@ -37,12 +37,12 @@ async function addErrand() {
     }
 
     await axios.post(`/errand/${userLogged}`, newErrand)
-    .then(response => {
-        response.data
-    })
-    .catch(error => {
-        console.log(error);
-    })
+        .then(response => {
+            response.data
+        })
+        .catch(error => {
+            console.log(error);
+        })
 
     showMessages();
 }
@@ -65,24 +65,24 @@ async function errandChange(id) {
 
 async function showMessages() {
     await axios.get('/users')
-    .then(response => {
-        user.innerHTML = userLogged;
-        tableBody.innerHTML = '';
-        const errands = response.data.find(user => user.name === userLogged).errands;
-        return errands.map(item => {
-            const position = errands.indexOf(item);
-            tableBody.innerHTML += `
+        .then(response => {
+            user.innerHTML = userLogged;
+            tableBody.innerHTML = '';
+            const errands = response.data.find(user => user.name === userLogged).errands;
+            return errands.map(item => {
+                const position = errands.indexOf(item);
+                tableBody.innerHTML += `
             <td class="td">${position + 1}</td>
             <td class="td">${item.errand}</td>
             <td class="td">
-                <input type='submit' class='button' value='Editar' draggable="false" onclick="errandChange(${item.id})"> 
+                <input type='submit' class='button' value='Editar' onclick="errandChange(${item.id})"> 
                 <input type='submit' class='button button-red' value='Excluir' onclick="errandDelete(${item.id})">
             </td>`
+            });
+        })
+        .catch(error => {
+            console.log(error);
         });
-    })
-    .catch(error => {
-        console.log(error);
-    });
 };
 
 showMessages();

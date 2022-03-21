@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>ScrapBook Login</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="./css/styles.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="background">
-                <img src="./images/background.jpg" alt="Imagem-de-fundo">
-            </div>
-            <form class="register">
-                <div id="message"></div>
-                <div class="title-register">
-                    <h1>ScrapBook Login</h1>
-                </div>
-                <div class="input">
-                    <label for="name">Nome</label>
-                    <input type="text" name="name" id="name">
-                </div>
-                <div class="input">
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" id="password">
-                </div>
-                <div class="button-page">
-                    <input type="submit" value="LOGAR" onclick="login(event)">
-                </div>
-                <div class="login">
-                    <p>Não possui conta?</p>
-                    <a href="./index.html">Cadastrar</a>
-                </div>
-            </form>
+<head>
+    <title>ScrapBook Login</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <img src="./images/background.jpg" alt="Imagem-de-fundo">
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./js/login.js"></script>
-    </body>
+        <form class="register">
+            <div id="message"></div>
+            <div class="title-register">
+                <h1>ScrapBook Login</h1>
+            </div>
+            <div class="input">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="input">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="button-page">
+                <input type="submit" value="LOGAR" onclick="login(event)">
+            </div>
+            <div class="login">
+                <p>Não possui conta?</p>
+                <a href="./index.html">Cadastrar</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/login.js"></script>
+</body>
 </html>

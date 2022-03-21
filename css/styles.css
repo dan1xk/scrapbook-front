@@ -54,12 +54,12 @@
 }
 
 .title-register {
-    color: white;
-    margin-bottom: 20px;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .input {
-    color: white;
+  color: white;
 }
 
 .input input {
@@ -135,7 +135,6 @@
   width: 100%;
 }
 
-
 .add-errand {
   display: flex;
   align-items: center;
@@ -179,7 +178,9 @@
   box-shadow: 0 2px #999;
 }
 
-.button:hover {background-color: #435e43}
+.button:hover {
+  background-color: #435e43;
+}
 
 .button:active {
   background-color: #364937;

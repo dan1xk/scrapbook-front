@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>Cadastro</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="./css/styles.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="background">
-                <img src="./images/background.jpg" alt="Imagem-De-fundo">
-            </div>
-            <form class="register">
-                <div id="message"></div>
-                <div class="title-register">
-                    <h1>ScrapBook Cadastro</h1>
-                </div>
-                <div class="input">
-                    <label for="name">Nome</label>
-                    <input type="text" name="name" id="name">
-                </div>
-                <div class="input">
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" id="password">
-                </div>
-                <div class="input">
-                    <label for="confirm-password">Confirmar senha</label>
-                    <input type="password" name="confirm-password" id="confirm-password">
-                </div>
-                <div class="button-page">
-                    <input type="submit" value="CADASTRAR" onclick="createUser(event)">
-                </div>
-                <div class="login">
-                    <p>Já possui conta?</p>
-                    <a href="./login.html">Entrar</a>
-                </div>
-            </form>
+<head>
+    <title>Cadastro</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <img src="./images/background.jpg" alt="Imagem-De-fundo">
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./js/register.js"></script>
-    </body>
+        <form class="register">
+            <div id="message"></div>
+            <div class="title-register">
+                <h1>ScrapBook Cadastro</h1>
+            </div>
+            <div class="input">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="input">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="input">
+                <label for="confirm-password">Confirmar senha</label>
+                <input type="password" name="confirm-password" id="confirm-password">
+            </div>
+            <div class="button-page">
+                <input type="submit" value="CADASTRAR" onclick="createUser(event)">
+            </div>
+            <div class="login">
+                <p>Já possui conta?</p>
+                <a href="./login.html">Entrar</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/register.js"></script>
+</body>
 </html>

@@ -18,15 +18,15 @@ function login(event) {
     };
 
     axios.post('/login', user)
-    .then(response => {
-        message.style.display = 'block';
-        message.style.backgroundColor = '#28ff5e65';
-        message.innerHTML = response.data.message;
-        setTimeout(() => (window.location.href = "./errands.html"), 750);
-    })
-    .catch(error => {
-        message.style.display = 'block';
-        message.style.backgroundColor = '#ff282865';
-        message.innerHTML = error.response.data.message;
-    })
+        .then(response => {
+            message.style.display = 'block';
+            message.style.backgroundColor = '#28ff5e65';
+            message.innerHTML = response.data.message;
+            setTimeout(() => (window.location.href = "./errands.html"), 750);
+        })
+        .catch(error => {
+            message.style.display = 'block';
+            message.style.backgroundColor = '#ff282865';
+            message.innerHTML = error.response.data.message;
+        })
 }
